@@ -1,0 +1,16 @@
+body {
+    box-sizing: border-box;
+    background-color: #eeeeeeee;
+}
+
+.inner-card-hr {
+    width: 30%;
+    margin: 0;
+}
+
+.project-card{
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: #eeeeee98;   
+    }
+}
