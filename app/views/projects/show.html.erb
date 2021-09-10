@@ -1,4 +1,4 @@
-<%= link_to 'Back', projects_path, class:'btn btn-light mb-3' %>
+<%= link_to 'Back', projects_path, class:'btn btn-secondary mb-3' %>
 
 <div class="card">
   <div class="card-body">
@@ -29,8 +29,8 @@
 
         <div class="input-group">
             <%= f.text_field :name, class:'form-control', placeholder: 'Enter task name...' %>
-          <div class="input-group-append mx-1 mt-1">
-            <%= f.select :status, Task::STATUS_OPTIONS, class:'form-control'%>
+          <div class="input-group-append mx-1">
+            <%= f.select :status, Task::STATUS_OPTIONS, {}, class:'form-control'%>
           </div>
           <div class="input-group-append">
             <%= f.submit class:'btn btn-primary' %>
