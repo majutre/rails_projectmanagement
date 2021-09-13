@@ -20,3 +20,25 @@ body {
     font-size: 0.9rem;
     margin-left: 6px;
 }
+
+.list-style-none{
+    list-style: none;
+    padding-left: 0;
+}
+
+.grabbable{
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.grabbable:active{
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.grabbable:after{
+    cursor: grabbing;
+}
