@@ -1,32 +1,33 @@
-<div class="card">
+<div class="card w-50">
     <div class="card-body">
         <h2 class="card-title">Sign up</h2>
+        <hr class="inner-card-hr mt-2 mb-4" />
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
-      </div>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+          </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
-      </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
+          </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'btn btn-primary' %>
-      </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
+          </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
-</div>
+          <div class="actions mt-2">
+            <%= f.submit "Sign up", class:'btn btn-primary'%>
+          </div>
+        <% end %>
+  </div>
 </div>
     <%= render "devise/shared/links" %>
