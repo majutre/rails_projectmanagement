@@ -6,9 +6,9 @@
     <h2 class="card-title d-flex justify-content-between mb-4">
       <span><%= @project.name %></span>
       <div>
-        <%= link_to 'Edit', edit_project_path(@project), class:'btn btn-warning' %>
+        <%= link_to 'Edit', edit_project_path(@project), class:'btn btn-dark' %>
         <%= link_to 'Destroy', @project, method: :delete, 
-          data: { confirm: 'Are you sure you want to delete this project?' }, class:'btn btn-danger' %>    
+          data: { confirm: 'Are you sure you want to delete the entire project?' }, class:'btn btn-danger' %>    
       </div>
     </h2>
     
