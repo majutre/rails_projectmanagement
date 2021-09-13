@@ -12,6 +12,7 @@
       </div>
     </h2>
     <hr class="mt-2 mb-4" />
+
     <div class="mb-4">
       <h6>Add task</h6>
       <%= form_for([@task.project, @task]) do |f| %>
@@ -40,7 +41,7 @@
     </div>
     
     <h4>Tasks</h4>
-    <ul class="list-style-none grabbable" id="tasks-list">
+    <ul class="list-style-none" id="tasks-list">
 
     <% @project.tasks.each do |task| %>
       <% if task.persisted? %>
@@ -49,18 +50,21 @@
        <div class="card mb-3">
           <div class="card-body">
             <div class="d-flex justify-content-between">
-              <span class="badge alert-<%= task.badge_color %> mb-3"><%= task.status %></span>
-              <div>
-                <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
-                <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' %>
+                <div class="task-icons">
+                  <i class="fas fa-grip-vertical grip text-secondary grabbable"></i>
+                  <span class="badge alert-<%= task.badge_color %> mb-3"><%= task.status %></span>
+                </div>
+                <div>
+                  <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
+                  <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' %>
+                </div>
               </div>
+              <h4 class='card-title mb-2'>
+                <span><%= task.name %></span>
+              </h4>
+              <hr class="inner-card-hr" />
+              <p class="mt-2"><%= task.description %></p>
             </div>
-            <h4 class='card-title mb-2'>
-              <span><%= task.name %></span>
-            </h4>
-            <hr class="inner-card-hr" />
-            <p class="mt-2"><%= task.description %></p>
-          </div>
         </div>
       </li>
        

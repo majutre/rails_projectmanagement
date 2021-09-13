@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8'
 # Nested scaffold generator for Rails
 gem 'nested_scaffold', '~> 1.1'
+# Provides a better error page for Rails and other Rack apps.
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
