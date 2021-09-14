@@ -34,6 +34,8 @@ gem 'nested_scaffold', '~> 1.1'
 # Provides a better error page for Rails and other Rack apps.
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem "stimulus_reflex", "~> 3.4"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,3 +69,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg'
 end
+

@@ -9,8 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import Sortable from "sortablejs"
+import StimulusReflex from 'stimulus_reflex'
 
 import "../stylesheets/application"
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
@@ -23,3 +25,4 @@ document.addEventListener('turbolinks:load', () =>{
         ghostClass: 'light-bg'
     });
 })
+
