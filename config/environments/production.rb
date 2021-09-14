@@ -120,15 +120,15 @@ Rails.application.configure do
 
   config.cache_store = :redis_cache_store, {driver: :hiredis, url: ENV.fetch("REDIS_URL")}
 
-  config.session_store :redis_store,
-    key: "_session_production",
-    serializer: :json,
-    redis: {
-      driver: :hiredis,
-      expire_after: 1.year,
-      ttl: 1.year,
-      key_prefix: "app:session:",
-      url: ENV.fetch("REDIS_TLS_URL")
-    }
+  # config.session_store :redis_store,
+  #   key: "_session_production",
+  #   serializer: :json,
+  #   redis: {
+  #     driver: :hiredis,
+  #     expire_after: 1.year,
+  #     ttl: 1.year,
+  #     key_prefix: "app:session:",
+  #     url: ENV.fetch("REDIS_TLS_URL")
+  #   }
 
 end
