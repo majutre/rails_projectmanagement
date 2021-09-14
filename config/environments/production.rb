@@ -120,7 +120,7 @@ Rails.application.configure do
 
   config.cache_store = :redis_cache_store, {driver: :hiredis, url: ENV.fetch("REDIS_URL")}
 
-  config.session_store :redis_session_store,
+  config.session_store :redis_store,
     key: "_session_production",
     serializer: :json,
     redis: {
