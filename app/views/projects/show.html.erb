@@ -52,11 +52,29 @@
             <div class="d-flex justify-content-between">
                 <div class="task-icons">
                   <i class="fas fa-grip-vertical grip text-secondary grabbable"></i>
-                  <span class="badge alert-<%= task.badge_color %> mb-3"><%= task.status %></span>
+                  <span class="badge alert-<%= task.color_class %> mb-3"><%= task.status %></span>
                 </div>
+                
                 <div>
-                  <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
-                  <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' %>
+                  <div class="dropdown float-start">
+                    <button class="btn btn-sm btn-outline-<%= task.color_class %> dropdown-toggle mx-2" type="button" 
+                      id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <%= task.status %>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <% Task::STATUS_OPTIONS.each do |status| %>
+                      <li><a class="dropdown-item" href="#"><%= status[0] %></a></li>
+                    <% end %>
+                    </ul>
+                  </div>
+
+                  <%= link_to edit_project_task_path(task.project, task), class: 'btn btn-secondary btn-sm' do %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
+                  <%= link_to [task.project, task], method: :delete, 
+                  data: { confirm: "Are you sure you want to delete '#{task.name}'?" }, class: 'btn btn-dark btn-sm' do %>
+                    <i class="far fa-trash-alt"></i>
+                  <% end %>
                 </div>
               </div>
               <h4 class='card-title mb-2'>

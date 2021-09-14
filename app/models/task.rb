@@ -9,7 +9,7 @@ class Task < ApplicationRecord
     ['Complete', 'complete']
   ]
 
-  def badge_color
+  def color_class
     case status
     when 'not-started'
       'dark'
