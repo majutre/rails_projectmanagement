@@ -34,8 +34,10 @@ gem 'nested_scaffold', '~> 1.1'
 # Provides a better error page for Rails and other Rack apps.
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
-gem "stimulus_reflex", "~> 3.4"
 
+gem "stimulus_reflex", "~> 3.4"
+gem "redis", ">= 4.0", :require => ["redis", "redis/connection/hiredis"]
+gem "hiredis"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
