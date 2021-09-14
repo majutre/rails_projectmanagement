@@ -1,8 +1,34 @@
+/* GENERAL */
 body {
     box-sizing: border-box;
     background-color: #eeeeeeee;
 }
 
+.font-italic-sm {
+    font-style: italic !important;
+    font-size: 0.9rem;
+    margin-left: 6px;
+}
+
+.list-style-none {
+    list-style: none;
+    padding-left: 0;
+}
+
+.grabbable {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+/* CARDS */
 .inner-card-hr {
     width: 30%;
     margin: 0;
@@ -15,30 +41,7 @@ body {
     }
 }
 
-.font-italic-sm {
-    font-style: italic !important;
-    font-size: 0.9rem;
-    margin-left: 6px;
-}
-
-.list-style-none{
-    list-style: none;
-    padding-left: 0;
-}
-
-.grabbable{
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-}
-
-.grabbable:active{
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-}
-
+/* TASKS */
 .task-icons{
     .grip{
         font-size: 1.1rem;
