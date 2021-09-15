@@ -11,17 +11,6 @@ class Task < ApplicationRecord
     %w[Complete complete]
   ].freeze
 
-  def color_class
-    case status
-    when 'not-started'
-      'dark'
-    when 'in-progress'
-      'primary'
-    when 'complete'
-      'success'
-    end
-  end
-
   def complete?
     status == 'complete'
   end

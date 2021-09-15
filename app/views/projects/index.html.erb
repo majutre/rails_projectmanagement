@@ -12,7 +12,7 @@
         <div class="card project-card my-3">
           <div class="card-body">
           <div class="mb-3">
-            <span class="badge alert-<%= project.badge_color %>"><%= project.status %></span>
+            <%= render(ProgressBadgeComponent.new(status: project.status))%>
             <span class="text-secondary font-italic-sm"><%= project.percent_complete %>% complete - 
             (<%= project.total_complete %>/<%= project.total_tasks %>) tasks</span>
           </div>
