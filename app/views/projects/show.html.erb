@@ -14,12 +14,10 @@
     <hr class="mt-2 mb-4" />
 
     <div class="mb-4">
-      <h6>Add task</h6>
       <%= form_for([@task.project, @task]) do |f| %>
         <% if @task.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
             <ul>
             <% @task.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -29,7 +27,7 @@
         <% end %>
 
         <div class="input-group">
-          <%= f.text_field :name, class:'form-control', placeholder: 'Enter task name...' %>
+          <%= f.text_field :name, class:'form-control', placeholder: 'Create quick task' %>
           <div class="input-group-append mx-1">
             <%= f.select :status, Task::STATUS_OPTIONS, {}, class:'form-control'%>
           </div>
@@ -37,6 +35,9 @@
             <%= f.submit class:'btn btn-primary' %>
           </div>
           <% end %>
+        </div>
+        <div class="mt-2">
+          <%= render 'modal' %>
         </div>
     </div>
     
