@@ -7,11 +7,11 @@
     </h2>
     <hr class="mt-2 mb-4" />
 
-    <%# render(ProjectOverviewComponent.with_collection(@projects)) %>
+    <%= render(ProjectOverviewComponent.with_collection(@projects)) %>
    
-    <% @projects.each do |project| %>
-      <%= render(ProjectOverviewComponent.new(project: project)) %>  
-    <% end %>
+    <%# @projects.each do |project| %>
+      <%# render(ProjectOverviewComponent.new(project: project)) %>  
+    <%# end %>
 
   </div>  
 </div>

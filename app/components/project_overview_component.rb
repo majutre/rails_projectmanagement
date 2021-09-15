@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProjectOverviewComponent < ViewComponent::Base
+    with_collection_parameter :project
     attr_reader :project
 
     def initialize(project:)
