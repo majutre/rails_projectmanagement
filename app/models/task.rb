@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   belongs_to :project
 
-  validates :status, inclusion: { in: ['not-started', 'in-progress', 'complete'] }
+  validates :status, inclusion: { in: %w[not-started in-progress complete] }
 
   STATUS_OPTIONS = [
     ['Not started', 'not-started'],
@@ -9,17 +11,6 @@ class Task < ApplicationRecord
     ['Complete', 'complete']
   ]
 
-  def color_class
-    case status
-    when 'not-started'
-      'dark'
-    when 'in-progress'
-      'primary'
-    when 'complete'
-      'success'
-    end
-  end
-  
   def complete?
     status == 'complete'
   end
