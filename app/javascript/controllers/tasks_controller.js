@@ -1,8 +1,4 @@
 import ApplicationController from './application_controller'
-
-/* This is the custom StimulusReflex controller for the Tasks Reflex.
- * Learn more at: https://docs.stimulusreflex.com
- */
 export default class extends ApplicationController {
 
 	sort(event){
@@ -13,11 +9,11 @@ export default class extends ApplicationController {
 		})
 		element.dataset.tasks = JSON.stringify(taskList)
 		this.stimulate('TasksReflex#sort', element)
-  }
+	}
 
-  connect () {
-	super.connect()
-	// add your code here, if applicable
-  }
+	connect () {
+		super.connect()
+		// add your code here, if applicable
+	}
 
 }
