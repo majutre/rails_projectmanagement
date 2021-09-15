@@ -17,5 +17,4 @@ class ProgressBadgeComponent < ViewComponent::Base
       'success'
     end
   end
-
 end

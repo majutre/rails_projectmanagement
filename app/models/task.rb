@@ -8,19 +8,8 @@ class Task < ApplicationRecord
   STATUS_OPTIONS = [
     ['Not started', 'not-started'],
     ['In progress', 'in-progress'],
-    %w[Complete complete]
-  ].freeze
-
-  def color_class
-    case status
-    when 'not-started'
-      'dark'
-    when 'in-progress'
-      'primary'
-    when 'complete'
-      'success'
-    end
-  end
+    ['Complete', 'complete']
+  ]
 
   def complete?
     status == 'complete'

@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: %i[show edit update destroy]
-  skip_before_action :verify_authenticity_token, :only => [:index, :show]
+  skip_before_action :verify_authenticity_token, only: %i[index show]
 
   # GET /projects or /projects.json
   def index
