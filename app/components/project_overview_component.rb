@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class ProjectOverviewComponent < ViewComponent::Base
+  extend Forwardable
+
+  delegate [:name, :description, :status] => :@project
+
   with_collection_parameter :project
   attr_reader :project
 
